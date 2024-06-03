@@ -1,7 +1,10 @@
+import SlidePhoto from "./SlidePhoto"
+
 const Home = () =>{
   return(
-    <div>
-      
+    <div  className="py-16">
+      <SlidePhoto/>
     </div>
   )
 }
+export default Home;
