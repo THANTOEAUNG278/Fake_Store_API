@@ -1,6 +1,7 @@
 import { NavLink, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { MdStar } from "react-icons/md";
+import { FiLoader } from "react-icons/fi";
 
 const Product = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const Product = () => {
   const Loading = () => {
     return (
       <div className="text-center text-xl py-10">
-        Loading....
+        <FiLoader/>
       </div>
     );
   };

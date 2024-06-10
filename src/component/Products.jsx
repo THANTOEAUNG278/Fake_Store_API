@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { FiLoader } from "react-icons/fi";
 
 const Products = () => {
   const [data, setData] = useState([]);
@@ -42,7 +43,7 @@ const Products = () => {
 
   const Loading = () => (
     <div className="flex items-center justify-center min-h-screen">
-      Loading...
+      <FiLoader/>
     </div>
   );
 
