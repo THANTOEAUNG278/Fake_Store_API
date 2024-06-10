@@ -61,7 +61,7 @@ const Products = () => {
             <img src={product.image} alt={product.title} className="w-full product-card-ratio mb-4" />
             <h3 className="text-lg font-bold mb-2 truncate">{product.title}</h3>
             <p className="text-gray-700 mb-2">${product.price}</p>
-            <NavLink to={"/product"} className="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition">Buy Now</NavLink>
+            <NavLink to={`/products/${product.id}`} className="text-white bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg transition">Buy Now</NavLink>
           </div>
         ))}
       </div>
