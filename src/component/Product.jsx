@@ -45,7 +45,7 @@ const Product = () => {
           </div>
           <div className="flex space-x-4">
             <button className="bg-indigo-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-indigo-600 transition duration-300">Add to Cart</button>
-            <NavLink to="/cart" className="bg-green-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-green-600 transition duration-300">Go to Cart</NavLink>
+            <NavLink to="/cart" className="bg-green-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-green-600 transition duration-300">Place Your Order</NavLink>
           </div>
         </div>
       </div>
