@@ -1,12 +1,14 @@
 import { NavLink, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { MdStar } from "react-icons/md";
 import { FiLoader } from "react-icons/fi";
+import { CartContext } from "./CartContext";
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
+  const {addToCart} = useContext(CartContext);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -44,7 +46,7 @@ const Product = () => {
             <p className="text-gray-700 mb-6">{product.description}</p>
           </div>
           <div className="flex space-x-4">
-            <button className="bg-indigo-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-indigo-600 transition duration-300">Add to Cart</button>
+            <button className="bg-indigo-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-indigo-600 transition duration-300" onClick={()=>addToCart(product)}>Add to Cart</button>
             <NavLink to="/cart" className="bg-green-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-green-600 transition duration-300">Place Your Order</NavLink>
           </div>
         </div>

@@ -2,8 +2,11 @@ import { NavLink } from "react-router-dom";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { PiTrademarkRegisteredFill } from "react-icons/pi";
 import { BsCart4 } from "react-icons/bs";
+import { CartContext } from "./CartContext";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const {cart} =useContext(CartContext);
   return (
     <div className="flex justify-between items-center bg-slate-400 h-14 w-full px-14 fixed z-10">
       <div className="text-white font-extrabold text-2xl">Fake API STORE</div>
@@ -22,7 +25,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink to="/cart" className="hover:text-indigo-600 transition duration-300 flex items-center">
           <BsCart4 />
-          <span className=" text-sm">(0)</span>
+          <span className=" text-sm">({cart.length})</span>
         </NavLink>
       </div>
     </div>
