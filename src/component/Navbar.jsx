@@ -25,7 +25,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink to="/cart" className="hover:text-indigo-600 transition duration-300 flex items-center">
           <BsCart4 />
-          <span className=" text-sm">({cart.length})</span>
+          <span className=" text-sm font-bold text-red-700">({cart.length})</span>
         </NavLink>
       </div>
     </div>

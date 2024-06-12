@@ -44,18 +44,19 @@ const Product = () => {
             </div>
             <h3 className="text-3xl font-bold text-gray-900 mb-4">${product.price}</h3>
             <p className="text-gray-700 mb-6">{product.description}</p>
-          </div>
-          <div className="flex space-x-4">
+            <div className="flex space-x-4">
             <button className="bg-indigo-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-indigo-600 transition duration-300" onClick={()=>addToCart(product)}>Add to Cart</button>
             <NavLink to="/cart" className="bg-green-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-green-600 transition duration-300">Place Your Order</NavLink>
           </div>
+          </div>
+
         </div>
       </div>
     );
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center ">
+    <div className="min-h-screen flex items-center justify-center py-16">
       {loading ? <Loading /> : <ShowProduct />}
     </div>
   );

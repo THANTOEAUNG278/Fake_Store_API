@@ -49,7 +49,7 @@ const Products = () => {
 
   const ShowProducts = () => (
     <>
-      <div className="flex gap-3 justify-center items-center text-xl font-bold mb-5 pt-16 pm-5">
+      <div className="flex gap-3 justify-center items-center text-xl font-bold mb-5 pt-16 py-4 pm-5">
         <button className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-indigo-300 transition" onClick={() => filterProducts('All')}>All</button>
         <button className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-indigo-300 transition" onClick={() => filterProducts("men's clothing")}>Men's Clothing</button>
         <button className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-indigo-300 transition" onClick={() => filterProducts("women's clothing")}>Women's Clothing</button>
