@@ -29,7 +29,7 @@ const Cart = () => {
               <div className="md:w-1/4 flex flex-col justify-center items-center mb-4 md:mb-0">
                 <img src={product.image} alt={product.title} className="w-32 h-32 object-contain rounded mr-[55px]" />
                 <div>
-                  <p className="text-gray-700 font-bold mx-5 my-2">${(product.price ).toFixed(2)}</p>
+                  <p className="text-gray-700 font-bold mx-5 my-2">${(product.price ).toFixed(2)} × {product.quantity}</p>
                   <div className="flex items-center">
                     <button onClick={() => removeFromCart(product.id)} className="px-3 py-1 font-bold bg-gray-300 rounded">-</button>
                     <span className="px-3 font-bold">{product.quantity}</span>

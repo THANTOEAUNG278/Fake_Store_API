@@ -8,7 +8,8 @@ const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
-  const {addToCart} = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
+  const [notification, setNotification] = useState("");
 
   useEffect(() => {
     const getProducts = async () => {
@@ -20,10 +21,15 @@ const Product = () => {
     getProducts();
   }, [id]);
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setNotification("Item added to cart!");
+  };
+
   const Loading = () => {
     return (
       <div className="text-center text-xl py-10">
-        <FiLoader/>
+        <FiLoader />
       </div>
     );
   };
@@ -45,11 +51,24 @@ const Product = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-4">${product.price}</h3>
             <p className="text-gray-700 mb-6">{product.description}</p>
             <div className="flex space-x-4">
-            <button className="bg-indigo-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-indigo-600 transition duration-300" onClick={()=>addToCart(product)}>Add to Cart</button>
-            <NavLink to="/cart" className="bg-green-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-green-600 transition duration-300">Place Your Order</NavLink>
+              <button
+                className="bg-indigo-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-indigo-600 transition duration-300"
+                onClick={() => handleAddToCart(product)}
+              >
+                Add to Cart
+              </button>
+              <NavLink
+                to="/cart" onClick={() => handleAddToCart(product)}
+                className="bg-green-500 text-white py-3 px-6 rounded-md shadow-md hover:bg-green-600 transition duration-300">
+                Place Your Order
+              </NavLink>
+            </div>
+            {notification && (
+              <div className="mt-4 p-4 bg-green-100 text-green-700 border border-green-300 rounded">
+                {notification} <NavLink to="/cart" className="text-indigo-600 underline">View Cart</NavLink>
+              </div>
+            )}
           </div>
-          </div>
-
         </div>
       </div>
     );
